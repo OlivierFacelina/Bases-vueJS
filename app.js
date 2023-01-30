@@ -4,7 +4,8 @@ var nw = new Vue( {
 
     // Données / objet
     data: {
-        count: 0
+        isActive: false,
+        // count: 0
     //     fruit: {
     //         type: "fraise",
     //         couleur: "rouge",
@@ -18,14 +19,14 @@ var nw = new Vue( {
     //         couleur: "vert"
     //     },
 
-        // campusAm: {
-        //     id: 0,
-        //     campus: "La Manu, campus d'Amiens",
-        //     ville: "Amiens",
-        //     adresse: "70 rue des Jacobins",
-        //     telephone: "0986271204",
-        //     email : "contact-amiens@lamanu.fr"
-        // }
+        campusAm: {
+            id: 0,
+            campus: "La Manu, campus d'Amiens",
+            ville: "Amiens",
+            adresse: "70 rue des Jacobins",
+            telephone: "0986271204",
+            email : "contact-amiens@lamanu.fr"
+        }
         
         // message: "Yooo",
         // qui: "Bachelor",
@@ -41,6 +42,9 @@ var nw = new Vue( {
     //     changeClass: function() {
     //     this.isActive = !this.isActive
     // }
+    test: function() {
+        this.isActive = !this.isActive
+    }
     }
 })
 
@@ -48,3 +52,4 @@ var nw = new Vue( {
 // v-on ou @: recherche dans les methods, pour les event
 // v-if : condition
 // v-for : boucler
+// this : instance de vue 'accéder à une information qui se trouve dans data
