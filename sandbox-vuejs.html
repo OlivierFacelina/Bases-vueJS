@@ -30,11 +30,11 @@
                 </li>
             </ul> -->
             <ul>
-                <li v-for="(value,name,index) in campusAm" :key="campusAm.id" v-if="isActive ? 'test()' : ''">
+                <li v-for="(value,name,index) in campusAm" :key="campusAm.id" v-if="isActive">
                     <p>{{ index }} {{ name }} : {{ value }}</p>
                 </li>
             </ul>
-            <button v-on:click="test">Coordonnées campus Amiens</button>
+            <button v-on:click="test" v-bind:class="isActive ? 'alert-primary' : 'alert-danger'">{{ buttonMessage }}</button>
             <!-- <div>6
                 <button v-on:click="increment()">Add</button>
                 <p>{{ count }}</p>

@@ -5,6 +5,7 @@ var nw = new Vue( {
     // Données / objet
     data: {
         isActive: false,
+        buttonMessage : "Voir",
         // count: 0
     //     fruit: {
     //         type: "fraise",
