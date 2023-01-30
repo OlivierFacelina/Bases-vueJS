@@ -30,14 +30,15 @@
                 </li>
             </ul> -->
             <ul>
-                <li v-for="(value,name,index) in campusAm" :key="campusAm.id" v-if="name !=id">
+                <li v-for="(value,name,index) in campusAm" :key="campusAm.id" v-if="isActive ? 'test()' : ''">
                     <p>{{ index }} {{ name }} : {{ value }}</p>
                 </li>
             </ul>
-            <div>
-                <button v-on:click="count++">Add</button>
+            <button v-on:click="test">Coordonnées campus Amiens</button>
+            <!-- <div>6
+                <button v-on:click="increment()">Add</button>
                 <p>{{ count }}</p>
-            </div>
+            </div> -->
         </div>
         <!-- <h1 v-bind:class="isActive ? 'alert-primary' : 'alert-danger'">{{ message }} {{ qui }}</h1>
         <button v-on:click="changeClass">Changer sujet</button> -->
