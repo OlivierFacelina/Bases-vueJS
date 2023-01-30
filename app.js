@@ -4,6 +4,7 @@ var nw = new Vue( {
 
     // Données / objet
     data: {
+        count: 0
     //     fruit: {
     //         type: "fraise",
     //         couleur: "rouge",
@@ -17,13 +18,14 @@ var nw = new Vue( {
     //         couleur: "vert"
     //     },
 
-        campusAm: {
-            campus: "La Manu, campus d'Amiens",
-            ville: "Amiens",
-            adresse: "70 rue des Jacobins",
-            telephone: "0986271204",
-            email : "contact-amiens@lamanu.fr"
-        }
+        // campusAm: {
+        //     id: 0,
+        //     campus: "La Manu, campus d'Amiens",
+        //     ville: "Amiens",
+        //     adresse: "70 rue des Jacobins",
+        //     telephone: "0986271204",
+        //     email : "contact-amiens@lamanu.fr"
+        // }
         
         // message: "Yooo",
         // qui: "Bachelor",
@@ -42,7 +44,7 @@ var nw = new Vue( {
     }
 })
 
-// v-bind : rechercher dans les data
-// v-on : recherche dans les methods
+// v-bind ou : : rechercher dans les data
+// v-on ou @: recherche dans les methods, pour les event
 // v-if : condition
 // v-for : boucler
