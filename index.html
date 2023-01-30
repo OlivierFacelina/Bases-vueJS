@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+    />
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script async src="./form.js"></script>
+</head>
+<body>
+    <form id="form" @submit.prevent="submit" ref="form">
+        <div>
+
+            <!-- INFORMATIONS GENERALES -->
+            <div class="form-group">
+            <label for="exampleInputPassword1">Nom</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your lastname" v-model="lastname" @keyup="filter">
+            <p v-if="error">Le message est : {{ error }}</p>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Prénom</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="firstname">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <!-- CIVILITE -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="homme" v-model="picked">
+                <label class="form-check-label" for="exampleRadios1">
+                Homme
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="femme" v-model="picked">
+                <label class="form-check-label" for="exampleRadios2">
+                Femme
+                </label>
+            </div>
+
+            <!-- CAMPUS -->
+            <select class="form-select" v-model="selection">
+                <option value="">Campus</option>
+                <option>Amiens</option>
+                <option>Le Havre</option>
+                <option>Versailles</option>
+                <option>Compiègne</option>
+            </select>
+
+            <!-- CENTRES D'INTERET -->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" value="HTML/CSS" v-model="checkedCompetences">
+                <label class="form-check-label" for="exampleCheck1">HTML/CSS</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" value="JavaScript" v-model="checkedCompetences">
+                <label class="form-check-label" for="exampleCheck1">JavaScript</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" value="jQuery" v-model="checkedCompetences">
+                <label class="form-check-label" for="exampleCheck1">jQuery</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" value="Vue.js" v-model="checkedCompetences">
+                <label class="form-check-label" for="exampleCheck1">Vue.js</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" value="Design UI/UX" v-model="checkedCompetences">
+                <label class="form-check-label" for="exampleCheck1">Design UI/UX</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" value="PAO" v-model="checkedCompetences">
+                <label class="form-check-label" for="exampleCheck1">PAO</label>
+            </div>
+            
+            <!-- MESSAGE -->
+            <textarea v-model="message"></textarea>
+
+            <!-- ACCEPTATION -->
+            <label>Si vous n’êtes pas un avocat, la création d’une politique ou déclaration de confidentialité pour protéger votre entreprise et vos clients peut être une tâche difficile.
+
+                Grâce à notre générateur de politique de confidentialité, vous pouvez créer une déclaration de confidentialité qui peut vous aider à instaurer un climat de confiance vis-à-vis des clients et à faire en sorte que votre entreprise soit en conformité avec la loi. Remplissez les champs ci-dessous et nous allons vous envoyer par e-mail une politique de confidentialité personnalisée pour votre entreprise.</label> 
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Oui</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Non</label>
+            </div>
+            <button type="submit">Submit</button>
+            <button type="reset" @click="resetForm">Réinitialiser</button>
+        <div id="recap">
+            <h1>Récapitulatif des champs :</h1>
+            <p>Nom : {{ lastname }}</p>
+            <p>Prénom : {{ firstname }}</p>
+            <p>Adresse mail : {{ email }}</p>
+            <p>Civilité : {{ picked }}</p>
+            <p>Campus : {{ selection }}</p>
+            <p>Saisir ton message : {{ message }}</p>
+            <p>Centres d'intérêt : {{ checkedCompetences }}</p>
+        </div>
+        </div>
+
+      </form>
+</body>
+</html>

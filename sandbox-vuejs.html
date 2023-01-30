@@ -40,6 +40,9 @@
                 <p>{{ count }}</p>
             </div> -->
         </div>
+        <input type="text" v-model="firstname" placeholder="modifiez-moi" @keyup="filter">
+        <p v-if="error">Le message est : {{ error }}</p>
+        <p>{{ firstname }}</p>
         <!-- <h1 v-bind:class="isActive ? 'alert-primary' : 'alert-danger'">{{ message }} {{ qui }}</h1>
         <button v-on:click="changeClass">Changer sujet</button> -->
         <!-- <p><img src="https://images-ext-2.discordapp.net/external/YHJ3B1RQJQW92IiG4mDDtw0rMQVuLZ-h95Yp4Mq996w/https/lamanu.fr/wp-content/uploads/2021/11/logo-la-manu-signature.png" :title="lamanu" :alt="lamanu"></p> -->

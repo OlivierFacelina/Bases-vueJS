@@ -5,6 +5,8 @@ var nw = new Vue( {
     // Données / objet
     data: {
         isActive: false,
+        firstname: "test",
+        error: null,
         buttonMessage : "Voir",
         // count: 0
     //     fruit: {
@@ -45,8 +47,15 @@ var nw = new Vue( {
     // }
     test: function() {
         this.isActive = !this.isActive
+    },
+    filter: function() {
+        let test = this.firstname.match(/^[A-z]+$/)
+        if(!test) {
+        this.error = "Ce prénom est pas au bon format"
+        }
     }
     }
+
 })
 
 // v-bind ou : : rechercher dans les data
