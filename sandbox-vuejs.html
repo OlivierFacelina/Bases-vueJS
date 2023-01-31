@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script async src="./app.js"></script>
 </head>
-<body>
+<body onload="test()">
     <div id="test">
         <div id="div-if" v-if="Math.random() > 0.5">Je suis une couille.</div>
         <div id="div-else" v-else>Je suis beau</div>

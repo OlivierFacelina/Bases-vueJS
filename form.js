@@ -27,6 +27,20 @@ var nw = new Vue( {
 
         resetForm() {
             this.$refs.form.reset();
-          }
+          },
+
+        test: function disableSubmit() {
+        document.getElementById("submit").disabled = true;
+        },
+  
+        test: function activateButton(element) {   
+            if(element.checked) {
+            document.getElementById("submit").disabled = false;
+            }
+            else  {
+            document.getElementById("submit").disabled = true;
+            }
+    
+    }
     }
 })
