@@ -9,6 +9,12 @@
     <script async src="./hook.js"></script>
 </head>
 <body>
-    <div id="app"></div>  
+    <div id="app">
+        <label>Longueur en mètres</label>
+        <input type="text" v-model="lengthInput">
+        <p>Longueur en mètres : {{ lengthInput }}</p>
+        <p>Longueur en pouces : {{ lengthInches }}</p>
+        <p>Longueur en smoot : {{ lengthSmoot }}</p>
+    </div>  
 </body>
 </html>

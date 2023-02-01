@@ -2,7 +2,8 @@ var nw = new Vue( {
     el: '#app',
 
     data: {
-        tempsEcoul: 0
+        tempsEcoul: 0,
+        lengthInput: 0,
     },
 
     mounted: function(){
@@ -12,8 +13,17 @@ var nw = new Vue( {
         }, 1000);
     },
     
-    destroyed() {
-        clearInterval(this.Interval)
-    }
+    // destroyed() {
+    //     clearInterval(this.Interval)
+    // }
+
+    computed: {
+        lengthInches() {
+          return this.lengthInput * 39.37
+        },
+        lengthSmoot() {
+          return this.lengthInput * 1.7
+        }
+      }
 })
-nw.$destroy()
+// nw.$destroy()
