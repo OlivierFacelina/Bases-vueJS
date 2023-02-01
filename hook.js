@@ -19,11 +19,12 @@ var nw = new Vue( {
 
     computed: {
         lengthInches() {
-          return this.lengthInput * 39.37
+          return (this.lengthInput * 39.37).toFixed(2)
         },
         lengthSmoot() {
-          return this.lengthInput * 1.7
+          return (this.lengthInput * 1.7).toFixed(2)
         }
       }
 })
 // nw.$destroy()
+
