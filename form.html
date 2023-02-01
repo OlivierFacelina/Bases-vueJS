@@ -21,18 +21,26 @@
 </head>
 <body>
     <form id="form" @submit.prevent="submit" ref="form">
+        <div id="array">
+        
+        </div>
+
         <div>
 
             <!-- INFORMATIONS GENERALES -->
             <div class="form-group">
-            <label for="exampleInputPassword1">Nom</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your lastname" v-model="lastname" @keyup="filter">
-            <p v-if="error">Le message est : {{ error }}</p>
+                <label for="exampleInputPassword1">Nom</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your lastname" v-model="lastname" @blur="filter">
+                <div>
+                    <p v-if="error">Le message est : {{ error[0]?.error }}</p>
+                </div>
             </div>
+
             <div class="form-group">
-            <label for="exampleInputPassword1">Prénom</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="firstname">
+                <label for="exampleInputPassword1">Prénom</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="firstname">
             </div>
+
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="email">
@@ -56,7 +64,7 @@
             <!-- CAMPUS -->
             <select class="form-select" v-model="selection">
                 <option value="">Campus</option>
-                <option>Amiens</option>
+                <option value="Amiens">Amiens</option>
                 <option>Le Havre</option>
                 <option>Versailles</option>
                 <option>Compiègne</option>
@@ -68,8 +76,8 @@
                 <label class="form-check-label" for="exampleCheck1">HTML/CSS</label>
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" value="JavaScript" v-model="checkedCompetences">
-                <label class="form-check-label" for="exampleCheck1">JavaScript</label>
+                <input type="checkbox" class="form-check-input" id="exampleCheck2" value="JavaScript" v-model="checkedCompetences">
+                <label class="form-check-label" for="exampleCheck2">JavaScript</label>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" value="jQuery" v-model="checkedCompetences">
