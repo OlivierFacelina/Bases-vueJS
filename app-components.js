@@ -2,8 +2,10 @@ Vue.component("post-item", {
     template: 
         `<div class="post-item col-4">
             <div class="card">
-            <p>{{title}}</p> 
-            <p>{{description}}</p></div>
+                <p>{{title}}</p> 
+                <p>{{description}}</p>
+                <slot></slot>
+            </div>
         </div>`,
         props: ['title','description']
 })
