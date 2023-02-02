@@ -19,11 +19,9 @@ Vue.component("jaime-btn",{
             img = this.$el.querySelector("img")
             thumb = img.getAttribute("src")
             if (thumb == "/node_modules/bootstrap-icons/icons/hand-thumbs-up-fill.svg") {
-              img.removeAttribute("src")
                 img.setAttribute("src","/node_modules/bootstrap-icons/icons/hand-thumbs-down-fill.svg")
             }
             else {
-                img.removeAttribute("src")
                 img.setAttribute("src","/node_modules/bootstrap-icons/icons/hand-thumbs-up-fill.svg")
             }
         }
