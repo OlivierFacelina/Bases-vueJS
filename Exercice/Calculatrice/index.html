@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Calculatrice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script async src="./assets/script.js"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <main>
+        <div id="app">
+        <div class="calculator">
+            <div class="line_1">
+                <p id="result">{{result}}</p>
+            </div>
+            <div class="line_2">
+                <button class="operator" @click="clear">C</button>
+                <button class="operator" @click="enterOps(4)">/</button>
+                <button class="operator">%</button>
+                <button class="operator" @click="del">DEL</button>
+            </div>
+            <div class="line_3">
+                <button class="number" @click="enterNum(7)">7</button>
+                <button class="number" @click="enterNum(8)">8</button>
+                <button class="number" @click="enterNum(9)">9</button>
+                <button class="operator" @click="enterOps(3)">*</button>
+            </div>
+            <div class="line_4">
+                <button class="number" @click="enterNum(4)">4</button>
+                <button class="number" @click="enterNum(5)">5</button>
+                <button class="number" @click="enterNum(6)">6</button>
+                <button class="operator" @click="enterOps(2)">-</button>
+            </div>
+            <div class="line_5">
+                <button class="number" @click="enterNum(1)">1</button>
+                <button class="number" @click="enterNum(2)">2</button>
+                <button class="number" @click="enterNum(3)">3</button>
+                <button class="operator" @click="enterOps(1)">+</button>
+            </div>
+            <div class="line_6">
+                <button class="number" @click="enterNum(0)">0</button>
+                <button class="operator" @click="addDecimal">.</button>
+                <button class="operator" @click="sum">=</button>
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+</html>

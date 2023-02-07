@@ -1,0 +1,41 @@
+body {
+    background-color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    background-color: blue;
+    height: 200px;
+    width: 20%;
+    border: 1px solid black;
+}
+
+button {
+    width: 50px;
+}
+
+.number {
+    background-color: #E6AC70;
+}
+
+.number:hover {
+    background-color: #FFBF66;
+}
+
+.operator {
+    background-color: #E2E9C0;
+}
+
+.operator:hover {
+    background-color: #F4CFDF;
+}
+
+.line_1 {
+    text-align: center;
+}
+
+.line_2, .line_3, .line_4, .line_5, .line_6 {
+    display: flex;
+    justify-content: center;
+}
