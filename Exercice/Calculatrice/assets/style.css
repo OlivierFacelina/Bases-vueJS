@@ -1,14 +1,31 @@
 body {
-    background-color: red;
+    background-color: skyblue;
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5vh;
 }
 
 .calculator {
-    background-color: blue;
+    margin-top: 20vh;
+    background-color: grey;
+    color: white;
     height: 200px;
-    width: 20%;
+    width: 50vw;
+    height: 50vh;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 button {

@@ -15,9 +15,7 @@
     <main>
         <div id="app">
         <div class="calculator">
-            <div class="line_1">
-                <p id="result">{{result}}</p>
-            </div>
+            <h1>Calculatrice</h1>
             <div class="line_2">
                 <button class="operator" @click="clear">C</button>
                 <button class="operator" @click="enterOps(4)">/</button>
@@ -46,6 +44,9 @@
                 <button class="number" @click="enterNum(0)">0</button>
                 <button class="operator" @click="addDecimal">.</button>
                 <button class="operator" @click="sum">=</button>
+            </div>
+            <div class="line_1">
+                <p id="result">{{result}}</p>
             </div>
         </div>
         </div>
